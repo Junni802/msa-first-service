@@ -22,7 +22,7 @@ public class FirstServiceController {
     }
 
     @GetMapping("/message")
-    public String message(@RequestHeader("first-request") String header) {
+    public String message(@RequestHeader(name = "first-request", defaultValue = "default-value") String header) {
         System.out.println(header);
         return "Hello World in First Service.";
     }
